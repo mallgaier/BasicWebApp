@@ -23,31 +23,13 @@ public class QueryProcessor {
         }
         if (query.toLowerCase().contains("largest")) {
             String[] split = query.split(":");
-            String[] numbers = split[1].split(",");
+            String[] numbers = split[split.length-1].split(",");
             return Arrays.stream(numbers).map(Integer::parseInt).max(Comparator.comparing(Integer::valueOf)).get().toString();
         }
         if (query.toLowerCase().contains("plus")) {
             String[] split = query.split(" ");
             int result = (Integer.parseInt(split[split.length-1]) + Integer.parseInt(split[split.length-3]));
             return Integer.toString(result);
-        }
-        if (query.toLowerCase().contains("6 plus 2")) {
-            return "8";
-        }
-        if (query.toLowerCase().contains("2 plus 3")) {
-            return "5";
-        }
-        if (query.toLowerCase().contains("1 plus 19")) {
-            return "20";
-        }
-        if (query.toLowerCase().contains("16 plus 5")) {
-            return "21";
-        }
-        if (query.toLowerCase().contains("20 plus 12")) {
-            return "32";
-        }
-        if (query.toLowerCase().contains("67, 827, 490, 13")) {
-            return "827";
         }
         return "";
     }
