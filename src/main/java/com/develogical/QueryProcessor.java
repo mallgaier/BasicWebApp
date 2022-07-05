@@ -35,8 +35,8 @@ public class QueryProcessor {
         }
         if (query.toLowerCase().contains("multiplied")) {
             String[] split = query.split(" ");
-            int result = (Integer.parseInt(split[split.length-1]) * Integer.parseInt(split[split.length-3]));
-            return Integer.toString(result);
+            long result = (Long.parseLong(split[split.length-1]) * Long.parseLong(split[split.length-3]));
+            return Long.toString(result);
         }
         if (query.toLowerCase().contains("square and a cube")) {
             String[] split = query.split(":");
