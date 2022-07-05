@@ -24,7 +24,7 @@ public class QueryProcessor {
         if (query.toLowerCase().contains("largest")) {
             String[] split = query.split(":");
             String[] numbers = split[split.length-1].split(",");
-            return Arrays.stream(numbers).map(Integer::parseInt).max(Comparator.comparing(Integer::valueOf)).get().toString();
+            return Arrays.stream(numbers).map(String::trim).map(Integer::parseInt).max(Comparator.comparing(Integer::valueOf)).get().toString();
         }
         if (query.toLowerCase().contains("plus")) {
             String[] split = query.split(" ");
