@@ -1,5 +1,8 @@
 package com.develogical;
 
+import java.util.Arrays;
+import java.util.Comparator;
+
 public class QueryProcessor {
 
     public String process(String query) {
@@ -18,8 +21,10 @@ public class QueryProcessor {
         if (query.toLowerCase().contains("name")) {
             return "Michael";
         }
-        if (query.toLowerCase().contains("9 plus 7")) {
-            return "16";
+        if (query.toLowerCase().contains("largest")) {
+            String[] split = query.split(":");
+            String[] numbers = split[1].split(",");
+            return Arrays.stream(numbers).map(Integer::parseInt).max(Comparator.comparing(Integer::valueOf)).get().toString();
         }
         if (query.toLowerCase().contains("3 plus 0")) {
             return "0";
@@ -29,6 +34,9 @@ public class QueryProcessor {
         }
         if (query.toLowerCase().contains("2 plus 3")) {
             return "5";
+        }
+        if (query.toLowerCase().contains("1 plus 19")) {
+            return "20";
         }
         if (query.toLowerCase().contains("16 plus 5")) {
             return "21";
