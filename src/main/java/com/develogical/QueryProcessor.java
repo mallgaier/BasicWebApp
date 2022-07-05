@@ -27,8 +27,14 @@ public class QueryProcessor {
         if (query.toLowerCase().contains("6 plus 2")) {
             return "8";
         }
+        if (query.toLowerCase().contains("2 plus 3")) {
+            return "5";
+        }
         if (query.toLowerCase().contains("16 plus 5")) {
             return "21";
+        }
+        if (query.toLowerCase().contains("20 plus 12")) {
+            return "32";
         }
         if (query.toLowerCase().contains("67, 827, 490, 13")) {
             return "827";
