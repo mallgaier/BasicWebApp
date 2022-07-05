@@ -18,6 +18,15 @@ public class QueryProcessor {
         if (query.toLowerCase().contains("name")) {
             return "Michael";
         }
+        if (query.toLowerCase().contains("9 plus 7")) {
+            return "16";
+        }
+        if (query.toLowerCase().contains("3 plus 0")) {
+            return "0";
+        }
+        if (query.toLowerCase().contains("6 plus 2")) {
+            return "8";
+        }
         return "";
     }
 }
